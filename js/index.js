@@ -19,6 +19,10 @@ RULES FOR TIC-TAC-TOE
 4. Add a readme.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
 5. Improve the style of CSS sheet
 */
+$(document).ready(() => {
+  console.log("loading...");
+});
+
 
 const matrix = new Array(3)
 
