@@ -23,21 +23,37 @@ RULES FOR TIC-TAC-TOE
 5. Improve the style of CSS sheet
 */
 
-const matrix = new Array(3);
+const matrix = new Array(3); //Creating Two Dimensional Arrays
+let rounds = 9;
 
 $(document).ready(() => {
-
   for (let i = 0; i < 3; i++) {
     matrix[i] = new Array(3);
 
-    $('.board').append(`<div id="row-${i}" class="row">`);
+    $(".board").append(`<div id="row-${i}" class="row">`);
     for (let j = 0; j < 3; j++) {
       matrix[i][j] = "-";
 
       $(`#row-${i}`).append(`<div id="column-${i}-${j}" class="column">`);
-      $(`#column-${i}-${j}`).append(`<div class="square nes-container is-rounded">${matrix[i][j]}</div>`)
+      $(`#column-${i}-${j}`).append(
+        `<div class="square nes-container is-rounded">${matrix[i][j]}</div>`
+      );
 
       console.log(matrix[i][j]);
+
+      $(`#column-${i}-${j}`).click(function() {
+
+        if (rounds % 2 !== 0) {
+          matrix[i][j] = "X";
+          console.log("Your turn!");
+        } else {
+          matrix[i][j] = "O";
+          console.log("Wait!");
+        }
+
+        $(`#column-${i}-${j} .square`).text(matrix[i][j]);
+        rounds = rounds - 1;
+      });
     }
   }
 });
