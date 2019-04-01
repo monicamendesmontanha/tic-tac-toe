@@ -36,22 +36,28 @@ $(document).ready(() => {
 
       $(`#row-${i}`).append(`<div id="column-${i}-${j}" class="column">`);
       $(`#column-${i}-${j}`).append(
-        `<div class="square nes-container is-rounded">${matrix[i][j]}</div>`
+        `<div class="square nes-container is-rounded"><span>${
+          matrix[i][j]
+        }</span></div>`
       );
 
       console.log(matrix[i][j]);
 
       $(`#column-${i}-${j}`).click(function() {
 
+
         if (rounds % 2 !== 0) {
           matrix[i][j] = "X";
+          // $(`#column-${i}-${j} .square span`).addClass("nes-icon is-large heart");
           console.log("Your turn!");
         } else {
           matrix[i][j] = "O";
+          // $(`#column-${i}-${j} .square span`).addClass("nes-icon is-large star");
           console.log("Wait!");
         }
 
         $(`#column-${i}-${j} .square`).text(matrix[i][j]);
+
         rounds = rounds - 1;
       });
     }
