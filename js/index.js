@@ -20,3 +20,15 @@ RULES FOR TIC-TAC-TOE
 5. Improve the style of CSS sheet
 */
 
+const matrix = new Array(3)
+
+for(let i = 0 ; i < 3 ; i++) {
+  // row
+  matrix[i] = new Array(3);
+  for(let j = 0 ; j < 3 ; j++) {
+    // column
+    matrix[i][j] = "*";
+    console.log(matrix[i][j]);
+  }
+};
+
