@@ -49,14 +49,17 @@ $(document).ready(() => {
         if (rounds % 2 !== 0) {
           matrix[i][j] = "X";
           // $(`#column-${i}-${j} .square span`).addClass("nes-icon is-large heart");
-          console.log("Your turn!");
+          insideBalloon = "Your turn!"
+
         } else {
           matrix[i][j] = "O";
           // $(`#column-${i}-${j} .square span`).addClass("nes-icon is-large star");
-          console.log("Wait!");
+          insideBalloon = "Wait!"
         }
 
         $(`#column-${i}-${j} .square`).text(matrix[i][j]);
+        $( '#inside-balloon'  ).text(insideBalloon);
+
 
         rounds = rounds - 1;
       });
