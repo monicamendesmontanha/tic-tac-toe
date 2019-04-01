@@ -4,7 +4,7 @@
 body {
   margin: 0 auto;
   background-color: #fff;
-  font-size: 14px;
+  font-size: 24px;
   /* font-family: "Patrick Hand", cursive; */
 }
 
@@ -19,7 +19,7 @@ h1 {
 
 .container {
   max-width: 95%;
-  min-height: 260px;
+  min-height: 430px;
   margin: 80px auto;
   display: flex;
   align-items: flex-start;
@@ -55,27 +55,48 @@ form {
 }
 
 .board {
-  width: 100%;
-  height: 100%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  font-size: 50px;
   /* background-color: #55C1FF; */
   /* border: solid #715AFF; */
 }
 
 .square {
-  width: 32.1%;
-  height: 32.2%;
-  margin: 0 auto;
-  /* border: solid #715AFF; */
+  height: 117px;
+  display: flex;
+  flex-direction: inherit;
+  justify-content: center;
   text-align: center;
-  font-size: 550%;
   color: #fff;
-  border-radius: 0.5em;
   background-color: #55c1ff;
-  /* color:  #A682FF; */
 }
+
+.square.nes-container.is-rounded {
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+
+
+
 
 .message {
   width: 28%;
