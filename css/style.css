@@ -1,33 +1,62 @@
 @import url("https://fonts.googleapis.com/css?family=Patrick+Hand|Permanent+Marker");
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
   background-color: #fff;
-  font-size: 18px;
-  font-family: "Patrick Hand", cursive;
+  font-size: 14px;
+  /* font-family: "Patrick Hand", cursive; */
 }
 
 h1 {
-  font-family: "Permanent Marker", cursive;
+  /* font-family: "Permanent Marker", cursive; */
   text-align: center;
   font-size: 42px;
   color: #55C1FF;
-  background-color: #715AFF;
+  background-color: #212529;
+  padding: 20px;
 }
 
 .container {
   max-width: 960px;
-  min-height: 800px;
+  min-height: 580px;
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
 }
 
+.aside {
+  width: 40%;
+}
+
 .instructions {
-  width: 300px;
-  color: #715AFF;
-  font-size: 16px;
+  width: 80%;
+  /* color: #715AFF; */
+  font-size: 10px;
+  text-align: justify;
+
+}
+
+.interative {
+  width: 80%;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+
+label {
+  color:  #55C1FF;
+}
+
+form {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color:#212529;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
 }
 
 .board {
@@ -46,9 +75,23 @@ h1 {
   margin: 0 auto;
   /* border: solid #715AFF; */
   text-align: center;
-  font-size: 600%;
+  font-size: 550%;
   color: #fff;
   border-radius: 0.5em;
   background-color: #55C1FF;
   /* color:  #A682FF; */
+}
+
+footer {
+  font-size: 8px;
+  color: #fff;
+  background-color: #212529;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 1.5px;
+}
+
+i {
+  color: #FC82FF;;
 }
