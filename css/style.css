@@ -3,13 +3,10 @@
 
 body {
   margin: 0 auto;
-  background-color: #fff;
   font-size: 24px;
-  /* font-family: "Patrick Hand", cursive; */
 }
 
 h1 {
-  /* font-family: "Permanent Marker", cursive; */
   text-align: center;
   font-size: 42px;
   color: #55c1ff;
@@ -31,7 +28,6 @@ h1 {
 
 .instructions {
   width: 80%;
-  /* color: #715AFF; */
   font-size: 9px;
   text-align: left;
 }
@@ -60,8 +56,6 @@ form {
   display: flex;
   flex-wrap: wrap;
   font-size: 50px;
-  /* background-color: #55C1FF; */
-  /* border: solid #715AFF; */
 }
 
 .square {
@@ -76,6 +70,7 @@ form {
 
 .square.nes-container.is-rounded {
   padding: 0;
+
 }
 
 .row {
