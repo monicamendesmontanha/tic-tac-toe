@@ -1,4 +1,7 @@
-console.log("%c Project 0: TIC-TAC-TOE", "color: blue; background-color: yellow");
+console.log(
+  "%c Project 0: TIC-TAC-TOE",
+  "color: blue; background-color: yellow"
+);
 
 /*
 RULES FOR TIC-TAC-TOE
@@ -19,20 +22,22 @@ RULES FOR TIC-TAC-TOE
 4. Add a readme.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
 5. Improve the style of CSS sheet
 */
+
+const matrix = new Array(3);
+
 $(document).ready(() => {
-  console.log("loading...");
-});
 
+  for (let i = 0; i < 3; i++) {
+    matrix[i] = new Array(3);
 
-const matrix = new Array(3)
+    $('.board').append(`<div id="row-${i}" class="row">`);
+    for (let j = 0; j < 3; j++) {
+      matrix[i][j] = "-";
 
-for(let i = 0 ; i < 3 ; i++) {
-  // row
-  matrix[i] = new Array(3);
-  for(let j = 0 ; j < 3 ; j++) {
-    // column
-    matrix[i][j] = "*";
-    console.log(matrix[i][j]);
+      $(`#row-${i}`).append(`<div id="column-${i}-${j}" class="column">`);
+      $(`#column-${i}-${j}`).append(`<div class="square nes-container is-rounded">${matrix[i][j]}</div>`)
+
+      console.log(matrix[i][j]);
+    }
   }
-};
-
+});
