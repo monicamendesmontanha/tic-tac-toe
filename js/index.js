@@ -4,7 +4,7 @@ console.log(
 );
 
 const matrix = new Array(3);
-let rounds = 9;
+let rounds = 0;
 const PLAYER_1 = "X";
 const PLAYER_2 = "O";
 const EMPTY_SLOT = "-";
@@ -81,9 +81,18 @@ const createBoard = function() {
 };
 
 const createGameplay = function() {
+  let gameEnded = false;
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
       $(`#column-${i}-${j}`).click(function() {
+        if (gameEnded) {
+          return;
+        }
+
+        if(matrix[i][j] !== EMPTY_SLOT) {
+          return;
+        }
+
         if (rounds % 2 !== 0) {
           matrix[i][j] = PLAYER_1;
           insideBalloon = `${PLAYER_2}'s turn`;
@@ -95,15 +104,17 @@ const createGameplay = function() {
         $(`#column-${i}-${j} .square`).text(matrix[i][j]);
         $("#inside-balloon").text(insideBalloon);
 
+        if (rounds >= 8) {
+          $("#inside-balloon").text("Try again!");
+          return;
+        }
+
         if (checkWinner(PLAYER_1) || checkWinner(PLAYER_2)) {
           $("#inside-balloon").text(`Player won!`);
+          gameEnded = true;
         }
 
-        rounds = rounds - 1;
-
-        if (rounds === 0) {
-          $("#inside-balloon").text("Try again!");
-        }
+        rounds = rounds + 1;
       });
     }
   }
