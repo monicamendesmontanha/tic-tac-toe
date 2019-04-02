@@ -89,7 +89,7 @@ const createGameplay = function() {
           return;
         }
 
-        if(matrix[i][j] !== EMPTY_SLOT) {
+        if (matrix[i][j] !== EMPTY_SLOT) {
           return;
         }
 
@@ -123,4 +123,9 @@ const createGameplay = function() {
 $(document).ready(() => {
   createBoard();
   createGameplay();
+
+  $(".nes-btn").click(function() {
+    $(".board").empty();
+    createBoard();
+  });
 });
