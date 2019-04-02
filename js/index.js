@@ -3,6 +3,12 @@ console.log(
   "color: blue; background-color: yellow"
 );
 
+const matrix = new Array(3);
+let rounds = 9;
+const PLAYER_1 = "X";
+const PLAYER_2 = "O";
+const EMPTY_SLOT = "-";
+
 const checkWinner = function(player) {
   const horizontal0 = [matrix[0][0], matrix[0][1], matrix[0][2]].every(
     item => item === player
@@ -32,11 +38,9 @@ const checkWinner = function(player) {
     result => result === true
   );
 
-  const diagonalRight = [
-    matrix[0][2],
-    matrix[1][1],
-    matrix[2][0]
-  ].every(item => item === player);
+  const diagonalRight = [matrix[0][2], matrix[1][1], matrix[2][0]].every(
+    item => item === player
+  );
   const diagonalLeft = [matrix[0][0], matrix[1][1], matrix[2][2]].every(
     item => item === player
   );
@@ -45,45 +49,53 @@ const checkWinner = function(player) {
     result => result === true
   );
 
-  return horizontal || vertical || diagonal
-
+  return horizontal || vertical || diagonal;
 };
 
-const matrix = new Array(3); //Creating Two Dimensional Arrays
-let rounds = 9;
+const row = function(id) {
+  return `<div id="${id}" class="row">`;
+};
 
-$(document).ready(() => {
+const column = function(id) {
+  return `<div id="${id}" class="column">`;
+};
+
+const square = function() {
+  return `<div class="square nes-container is-rounded"><span>-</span></div>`;
+};
+
+const createBoard = function() {
   for (let i = 0; i < 3; i++) {
     matrix[i] = new Array(3);
 
-    $(".board").append(`<div id="row-${i}" class="row">`);
+    $(".board").append(row(`row-${i}`));
+
     for (let j = 0; j < 3; j++) {
-      matrix[i][j] = "-";
+      matrix[i][j] = EMPTY_SLOT;
 
-      $(`#row-${i}`).append(`<div id="column-${i}-${j}" class="column">`);
-      $(`#column-${i}-${j}`).append(
-        `<div class="square nes-container is-rounded"><span>${
-          matrix[i][j]
-        }</span></div>`
-      );
+      $(`#row-${i}`).append(column(`column-${i}-${j}`));
 
-      console.log(matrix[i][j]);
+      $(`#column-${i}-${j}`).append(square());
+    }
+  }
+};
 
+const createGameplay = function() {
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
       $(`#column-${i}-${j}`).click(function() {
         if (rounds % 2 !== 0) {
-          matrix[i][j] = "X";
-          insideBalloon = "Your turn!";
-          // $(`#column-${i}-${j} .square span`).addClass("nes-icon is-large heart");
+          matrix[i][j] = PLAYER_1;
+          insideBalloon = `${PLAYER_2}'s turn`;
         } else {
-          matrix[i][j] = "O";
-          insideBalloon = "Wait!";
-          // $(`#column-${i}-${j} .square span`).addClass("nes-icon is-large star");
+          matrix[i][j] = PLAYER_2;
+          insideBalloon = `${PLAYER_1}'s turn`;
         }
 
         $(`#column-${i}-${j} .square`).text(matrix[i][j]);
         $("#inside-balloon").text(insideBalloon);
 
-        if (checkWinner("X") || checkWinner("O")) {
+        if (checkWinner(PLAYER_1) || checkWinner(PLAYER_2)) {
           $("#inside-balloon").text(`Player won!`);
         }
 
@@ -95,46 +107,9 @@ $(document).ready(() => {
       });
     }
   }
+};
+
+$(document).ready(() => {
+  createBoard();
+  createGameplay();
 });
-
-/*
-Check for occurrences of the same element (X or O): (and looking for a winner)
-
-1)in the lines of the board.
-• matrix[R][C]
-matrix[0][0] - - -
-matrix[0][1]
-matrix[0][2]
-
-matrix[1][0]
-matrix[1][1] - - -
-matrix[1][2]
-
-matrix[2][0]
-matrix[2][1]
-matrix[2][2] - - -
-
-2)in the columns of the board.
-• matrix[R][C]
-matrix[0][0] |
-matrix[1][0] |
-matrix[2][0] |
-
-matrix[0][1]  |
-matrix[1][1]  |
-matrix[2][1]  |
-
-matrix[0][2]    |
-matrix[1][2]    |
-matrix[2][2]    |
-
-3)on the diagonals of the board.
-• matrix[R][C]
-matrix[0][2]     /
-matrix[1][1]    /
-matrix[2][0]   /
-
-matrix[0][0]   \
-matrix[1][1]    \
-matrix[2][2]     \
-*/
