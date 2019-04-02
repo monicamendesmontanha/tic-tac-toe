@@ -96,9 +96,13 @@ const createGameplay = function() {
         if (rounds % 2 !== 0) {
           matrix[i][j] = PLAYER_1;
           insideBalloon = `${PLAYER_2}'s turn`;
+          // $('input:radio[name="answer-dark"]').filter('[value="X"]').attr('checked', true)
+          // $('input:radio[name="answer-dark"]').filter('[value="O"]').attr('checked', false)
         } else {
           matrix[i][j] = PLAYER_2;
           insideBalloon = `${PLAYER_1}'s turn`;
+          // $('input:radio[name="answer-dark"]').filter('[value="O"]').attr('checked', true)
+          // $('input:radio[name="answer-dark"]').filter('[value="X"]').attr('checked', false)
         }
 
         $(`#column-${i}-${j} .square`).text(matrix[i][j]);
@@ -109,8 +113,12 @@ const createGameplay = function() {
           return;
         }
 
-        if (checkWinner(PLAYER_1) || checkWinner(PLAYER_2)) {
-          $("#inside-balloon").text(`Player won!`);
+        if (checkWinner(PLAYER_1)) {
+          $("#inside-balloon").text(`${PLAYER_1} won!`);
+          gameEnded = true;
+        }
+        if (checkWinner(PLAYER_2)) {
+          $("#inside-balloon").text(`${PLAYER_2} won!`);
           gameEnded = true;
         }
 
@@ -120,12 +128,17 @@ const createGameplay = function() {
   }
 };
 
-$(document).ready(() => {
+const restartGame = function(){
+  $("#inside-balloon").text("Let's Start!");
+  $(".board").empty();
   createBoard();
   createGameplay();
+}
+
+$(document).ready(() => {
+  restartGame();
 
   $(".nes-btn").click(function() {
-    $(".board").empty();
-    createBoard();
+    restartGame();
   });
 });
