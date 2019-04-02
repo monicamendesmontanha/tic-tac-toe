@@ -3,67 +3,49 @@ console.log(
   "color: blue; background-color: yellow"
 );
 
-/*RULES FOR TIC-TAC-TOE
+const checkWinner = function(player) {
+  const horizontal0 = [matrix[0][0], matrix[0][1], matrix[0][2]].every(
+    item => item === player
+  );
+  const horizontal1 = [matrix[1][0], matrix[1][1], matrix[1][2]].every(
+    item => item === player
+  );
+  const horizontal2 = [matrix[2][0], matrix[2][1], matrix[2][2]].every(
+    item => item === player
+  );
 
-1. CSS FILE: The game is played on a grid that's 3 squares by 3 squares.
-2. JS LOGIC: You are X, your friend (or the computer in this case) is O. Players take turns putting their marks in empty squares.
-3. JS LOGIC: The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
-4. JS LOGIC: When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
----------------
-1. Separate HTML, CSS, and JavaScript files
-2. Create the HTML/CSS board/grid of game to play
-3. Create the js logic to play the tic tac toe
-4. Add a readme.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
-5. Improve the style of CSS sheet
-*/
-matrix: {
-  line0: [
-    [0][0],
-    [0][1],
-    [0][2]
-  ]
+  const horizontal = [horizontal0, horizontal1, horizontal2].some(
+    result => result === true
+  );
 
-  line1: [
-    [1][0],
-    [1][1],
-    [1][2]
-  ]
+  const vertical0 = [matrix[0][0], matrix[1][0], matrix[2][0]].every(
+    item => item === player
+  );
+  const vertical1 = [matrix[0][1], matrix[1][1], matrix[2][1]].every(
+    item => item === player
+  );
+  const vertical2 = [matrix[0][2], matrix[1][2], matrix[2][2]].every(
+    item => item === player
+  );
 
-  line2: [
-    [2][0],
-    [2][1],
-    [2][2]
-  ]
+  const vertical = [vertical0, vertical1, vertical2].some(
+    result => result === true
+  );
 
-  column0: [
-    [0][0],
-    [1][0],
-    [2][0]
-  ]
+  const diagonalRight = [
+    matrix[0][2],
+    matrix[1][1],
+    matrix[2][0]
+  ].every(item => item === player);
+  const diagonalLeft = [matrix[0][0], matrix[1][1], matrix[2][2]].every(
+    item => item === player
+  );
 
-  column1: [
-    [0][1],
-    [1][1],
-    [2][1]
-  ]
+  const diagonal = [diagonalRight, diagonalLeft].some(
+    result => result === true
+  );
 
-  column2: [
-    [0, 2],
-    [1, 2],
-    [2, 2]
-  ]
-
-  diagonalRight: [
-    [0][2],
-    [1][1],
-    [2][0]
-  ]
-
-  diagonalLeft: [
-    [0][0],
-    [1][1],
-    [2][2]
-  ]
+  return horizontal || vertical || diagonal
 
 };
 
@@ -101,14 +83,15 @@ $(document).ready(() => {
         $(`#column-${i}-${j} .square`).text(matrix[i][j]);
         $("#inside-balloon").text(insideBalloon);
 
-        if (matrix[0][0] == "X" && matrix[0][1] == "X" && matrix[0][2] == "X") {
-          $("#inside-balloon").text("You won!");
-        }
-        if (matrix[1][0] == "X" && matrix[1][1] == "X" && matrix[1][2] == "X") {
-          $("#inside-balloon").text("You won!");
+        if (checkWinner("X") || checkWinner("O")) {
+          $("#inside-balloon").text(`Player won!`);
         }
 
         rounds = rounds - 1;
+
+        if (rounds === 0) {
+          $("#inside-balloon").text("Try again!");
+        }
       });
     }
   }
