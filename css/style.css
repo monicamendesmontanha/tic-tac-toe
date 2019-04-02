@@ -125,13 +125,14 @@ form {
   align-items: center;
 }
 
-footer {
-  font-size: 8px;
+.footer {
+  font-size: 10px;
   color: #fff;
   background-color: #212529;
-  padding: 15px;
+  padding: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   letter-spacing: 1.5px;
 }
 
