@@ -55,3 +55,48 @@ $(document).ready(() => {
     }
   }
 });
+
+/*
+Check for occurrences of the same element (X or O): (and looking for a winner)
+
+1)in the lines of the board.
+• matrix[R][C]
+matrix[0][0] - - -
+matrix[0][1]
+matrix[0][2]
+
+matrix[1][0]
+matrix[1][1] - - -
+matrix[1][2]
+
+matrix[2][0]
+matrix[2][1]
+matrix[2][2] - - -
+
+2)in the columns of the board.
+• matrix[R][C]
+matrix[0][0] |
+matrix[1][0] |
+matrix[2][0] |
+
+matrix[0][1]  |
+matrix[1][1]  |
+matrix[2][1]  |
+
+matrix[0][2]    |
+matrix[1][2]    |
+matrix[2][2]    |
+
+3)on the diagonals of the board.
+• matrix[R][C]
+matrix[0][2]     /
+matrix[1][1]    /
+matrix[2][0]   /
+
+matrix[0][0]   \
+matrix[1][1]    \
+matrix[2][2]     \
+*/
+
+
+
