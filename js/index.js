@@ -1,4 +1,7 @@
-console.log("%c Project 0: TIC-TAC-TOE", "color: blue; background-color: yellow");
+console.log(
+  "%c Project 0: TIC-TAC-TOE",
+  "color: blue; background-color: yellow"
+);
 
 /*RULES FOR TIC-TAC-TOE
 
@@ -13,6 +16,56 @@ console.log("%c Project 0: TIC-TAC-TOE", "color: blue; background-color: yellow"
 4. Add a readme.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
 5. Improve the style of CSS sheet
 */
+matrix: {
+  line0: [
+    [0][0],
+    [0][1],
+    [0][2]
+  ]
+
+  line1: [
+    [1][0],
+    [1][1],
+    [1][2]
+  ]
+
+  line2: [
+    [2][0],
+    [2][1],
+    [2][2]
+  ]
+
+  column0: [
+    [0][0],
+    [1][0],
+    [2][0]
+  ]
+
+  column1: [
+    [0][1],
+    [1][1],
+    [2][1]
+  ]
+
+  column2: [
+    [0, 2],
+    [1, 2],
+    [2, 2]
+  ]
+
+  diagonalRight: [
+    [0][2],
+    [1][1],
+    [2][0]
+  ]
+
+  diagonalLeft: [
+    [0][0],
+    [1][1],
+    [2][2]
+  ]
+
+};
 
 const matrix = new Array(3); //Creating Two Dimensional Arrays
 let rounds = 9;
@@ -35,22 +88,27 @@ $(document).ready(() => {
       console.log(matrix[i][j]);
 
       $(`#column-${i}-${j}`).click(function() {
-
         if (rounds % 2 !== 0) {
           matrix[i][j] = "X";
-          insideBalloon = "Your turn!"
+          insideBalloon = "Your turn!";
           // $(`#column-${i}-${j} .square span`).addClass("nes-icon is-large heart");
         } else {
           matrix[i][j] = "O";
-          insideBalloon = "Wait!"
+          insideBalloon = "Wait!";
           // $(`#column-${i}-${j} .square span`).addClass("nes-icon is-large star");
         }
 
         $(`#column-${i}-${j} .square`).text(matrix[i][j]);
-        $( '#inside-balloon'  ).text(insideBalloon);
+        $("#inside-balloon").text(insideBalloon);
+
+        if (matrix[0][0] == "X" && matrix[0][1] == "X" && matrix[0][2] == "X") {
+          $("#inside-balloon").text("You won!");
+        }
+        if (matrix[1][0] == "X" && matrix[1][1] == "X" && matrix[1][2] == "X") {
+          $("#inside-balloon").text("You won!");
+        }
 
         rounds = rounds - 1;
-
       });
     }
   }
@@ -97,6 +155,3 @@ matrix[0][0]   \
 matrix[1][1]    \
 matrix[2][2]     \
 */
-
-
-
