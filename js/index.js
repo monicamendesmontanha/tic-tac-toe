@@ -166,6 +166,7 @@ const restartGame = function(){
   $("#inside-balloon").text("Let's Start!");
   $( "i#characters" ).removeClass().addClass( "nes-squirtle" );
   $(".board").empty();
+  $(".result").css({opacity: 1.0, visibility: "hidden"}).animate({opacity: 0.0});
   rounds = 0;
   createBoard();
   createGameplay();
