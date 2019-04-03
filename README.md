@@ -1,6 +1,6 @@
 # Project #0: The Game TIC TAC TOE
 
-This is my first project using HTML, CSS, JavaScript, JQuery and NES.css Framework.
+This is my first project using HTML, CSS, JavaScript, JQuery and NES.css Framework.  </br>
 [Link to live site](https://monicamendesmontanha.github.io/tic-tac-toe/) "Project 0: Tic Tac Toe"
 
 ### Initial page
