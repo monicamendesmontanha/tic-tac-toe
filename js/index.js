@@ -13,12 +13,21 @@ const checkWinner = function(player) {
   const horizontal0 = [matrix[0][0], matrix[0][1], matrix[0][2]].every(
     item => item === player
   );
+  if (horizontal0) {
+    $('.horizontal0').css({'visibility': 'visible'})
+  }
   const horizontal1 = [matrix[1][0], matrix[1][1], matrix[1][2]].every(
     item => item === player
   );
+  if (horizontal1) {
+    $('.horizontal1').css({'visibility': 'visible'})
+  }
   const horizontal2 = [matrix[2][0], matrix[2][1], matrix[2][2]].every(
     item => item === player
   );
+  if (horizontal2) {
+    $('.horizontal2').css({'visibility': 'visible'})
+  }
 
   const horizontal = [horizontal0, horizontal1, horizontal2].some(
     result => result === true
@@ -27,12 +36,21 @@ const checkWinner = function(player) {
   const vertical0 = [matrix[0][0], matrix[1][0], matrix[2][0]].every(
     item => item === player
   );
+  if (vertical0) {
+    $('.vertical0').css({'visibility': 'visible'})
+  }
   const vertical1 = [matrix[0][1], matrix[1][1], matrix[2][1]].every(
     item => item === player
   );
+  if (vertical1) {
+    $('.vertical1').css({'visibility': 'visible'})
+  }
   const vertical2 = [matrix[0][2], matrix[1][2], matrix[2][2]].every(
     item => item === player
   );
+  if (vertical2) {
+    $('.vertical2').css({'visibility': 'visible'})
+  }
 
   const vertical = [vertical0, vertical1, vertical2].some(
     result => result === true
@@ -41,9 +59,15 @@ const checkWinner = function(player) {
   const diagonalRight = [matrix[0][2], matrix[1][1], matrix[2][0]].every(
     item => item === player
   );
+  if (diagonalRight) {
+    $('.diagonalRight').css({'visibility': 'visible'})
+  }
   const diagonalLeft = [matrix[0][0], matrix[1][1], matrix[2][2]].every(
     item => item === player
   );
+  if (diagonalLeft) {
+    $('.diagonalLeft').css({'visibility': 'visible'})
+  }
 
   const diagonal = [diagonalRight, diagonalLeft].some(
     result => result === true
@@ -149,3 +173,7 @@ $(document).ready(() => {
     restartGame();
   });
 });
+
+$('.horizontal0').css({'visibility': 'show'})
+$('.horizontal1').css({'visibility': 'show'})
+$('.horizontal2').css({'visibility': 'show'})
