@@ -11,23 +11,28 @@ const EMPTY_SLOT = "-";
 
 const checkWinner = function(player) {
 
+  const showWin = function(selector){
+    $(selector).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0},2000);
+  }
+
   const horizontal0 = [matrix[0][0], matrix[0][1], matrix[0][2]].every(
     item => item === player
   );
   if (horizontal0) {
-    $('.horizontal0').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0},2000);
+    showWin('.horizontal0');
   }
+
   const horizontal1 = [matrix[1][0], matrix[1][1], matrix[1][2]].every(
     item => item === player
   );
   if (horizontal1) {
-    $('.horizontal1').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0},2000);
+    showWin('.horizontal1');
   }
   const horizontal2 = [matrix[2][0], matrix[2][1], matrix[2][2]].every(
     item => item === player
   );
   if (horizontal2) {
-    $('.horizontal2').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0},2000);
+    showWin('.horizontal2');
   }
 
   const horizontal = [horizontal0, horizontal1, horizontal2].some(
@@ -38,19 +43,19 @@ const checkWinner = function(player) {
     item => item === player
   );
   if (vertical0) {
-    $('.vertical0').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0},2000);
+    showWin('.vertical0');
   }
   const vertical1 = [matrix[0][1], matrix[1][1], matrix[2][1]].every(
     item => item === player
   );
   if (vertical1) {
-    $('.vertical1').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0},2000);
+    showWin('.vertical1');
   }
   const vertical2 = [matrix[0][2], matrix[1][2], matrix[2][2]].every(
     item => item === player
   );
   if (vertical2) {
-    $('.vertical2').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0},2000);
+    showWin('.vertical2');
   }
 
   const vertical = [vertical0, vertical1, vertical2].some(
@@ -61,13 +66,13 @@ const checkWinner = function(player) {
     item => item === player
   );
   if (diagonalRight) {
-    $('.diagonalRight').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0},2000);
+    showWin('.diagonalRight');
   }
   const diagonalLeft = [matrix[0][0], matrix[1][1], matrix[2][2]].every(
     item => item === player
   );
   if (diagonalLeft) {
-    $('.diagonalLeft').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0},2000);
+    showWin('.diagonalLeft');
   }
 
   const diagonal = [diagonalRight, diagonalLeft].some(
