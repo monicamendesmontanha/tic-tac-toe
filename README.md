@@ -1,7 +1,7 @@
 # Project #0: The Game TIC TAC TOE
 
 This is my first project using HTML, CSS, JavaScript, JQuery and NES.css Framework.
-[Link to live site](https://monicamendesmontanha.github.io/tic-tac-toe/ "Project 0: Tic Tac Toe")
+[Link to live site](https://monicamendesmontanha.github.io/tic-tac-toe/) "Project 0: Tic Tac Toe"
 
 ### Initial page
 <img width="1438" alt="Screen Shot 2019-04-03 at 20 24 50" src="https://user-images.githubusercontent.com/33978352/55468615-811bd200-564f-11e9-98ea-c3d5484620c5.png">
