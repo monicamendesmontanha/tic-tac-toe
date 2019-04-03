@@ -96,9 +96,13 @@ const createGameplay = function() {
         if (rounds % 2 !== 0) {
           matrix[i][j] = PLAYER_1;
           insideBalloon = `${PLAYER_2}'s turn`;
+          // $('input:radio[name="answer-dark"]').filter('[value="X"]').attr('checked', true)
+          // $('input:radio[name="answer-dark"]').filter('[value="O"]').attr('checked', false)
         } else {
           matrix[i][j] = PLAYER_2;
           insideBalloon = `${PLAYER_1}'s turn`;
+          // $('input:radio[name="answer-dark"]').filter('[value="O"]').attr('checked', true)
+          // $('input:radio[name="answer-dark"]').filter('[value="X"]').attr('checked', false)
         }
 
         $(`#column-${i}-${j} .square`).text(matrix[i][j]);
@@ -106,15 +110,18 @@ const createGameplay = function() {
 
         if (checkWinner(PLAYER_1)) {
           $("#inside-balloon").text(`${PLAYER_1} won!`);
+          $( "i#characters" ).removeClass( "nes-squirtle" ).addClass( "nes-icon trophy is-large" );
           gameEnded = true;
         }
 
         if (checkWinner(PLAYER_2)) {
           $("#inside-balloon").text(`${PLAYER_2} won!`);
+          $( "i#characters" ).removeClass( "nes-squirtle" ).addClass( "nes-icon trophy is-large" );
           gameEnded = true;
         }
         if (!checkWinner(PLAYER_1) && !checkWinner(PLAYER_2) && rounds >= 8){
           $("#inside-balloon").text(`It's a draw!`);
+          $( "i#characters" ).removeClass( "nes-squirtle" ).addClass( "nes-icon is-large star is-half" );
           gameEnded = true;
         }
 
@@ -127,10 +134,12 @@ const createGameplay = function() {
 
 const restartGame = function(){
   $("#inside-balloon").text("Let's Start!");
+  $( "i#characters" ).removeClass().addClass( "nes-squirtle" );
   $(".board").empty();
   rounds = 0;
   createBoard();
   createGameplay();
+
 }
 
 $(document).ready(() => {

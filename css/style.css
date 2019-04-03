@@ -125,6 +125,11 @@ form {
   align-items: center;
 }
 
+#inside-balloon {
+  text-align: center;
+
+}
+
 .footer {
   font-size: 10px;
   color: #fff;
