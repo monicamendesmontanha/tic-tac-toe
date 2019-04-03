@@ -126,13 +126,13 @@ const createGameplay = function() {
         if (rounds % 2 !== 0) {
           matrix[i][j] = PLAYER_1;
           insideBalloon = `${PLAYER_2}'s turn`;
-          $('input:radio[name="answer-dark"]').filter('[value="O"]').removeAttr('checked')
-          $('input:radio[name="answer-dark"]').filter('[value="X"]').attr('checked', true)
+          $('input:radio[name="answer-dark"]').filter('[value="X"]').removeAttr('checked')
+          $('input:radio[name="answer-dark"]').filter('[value="O"]').attr('checked', true)
         } else {
           matrix[i][j] = PLAYER_2;
           insideBalloon = `${PLAYER_1}'s turn`;
-          $('input:radio[name="answer-dark"]').filter('[value="X"]').removeAttr('checked')
-          $('input:radio[name="answer-dark"]').filter('[value="O"]').attr('checked', true)
+          $('input:radio[name="answer-dark"]').filter('[value="O"]').removeAttr('checked')
+          $('input:radio[name="answer-dark"]').filter('[value="X"]').attr('checked', true)
         }
 
         $(`#column-${i}-${j} .square`).text(matrix[i][j]);
