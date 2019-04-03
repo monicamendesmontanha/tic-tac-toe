@@ -127,7 +127,6 @@ form {
 
 #inside-balloon {
   text-align: center;
-
 }
 
 .footer {
@@ -149,7 +148,7 @@ i {
   color: #ff3;
 }
 
-.horizontal0{
+.horizontal0 {
   position: absolute;
   margin-left: 490px;
   margin-right: 500px;
@@ -160,7 +159,7 @@ i {
   z-index: 1;
 }
 
-.horizontal1{
+.horizontal1 {
   position: absolute;
   margin-left: 490px;
   margin-right: 500px;
@@ -171,7 +170,7 @@ i {
   z-index: 1;
 }
 
-.horizontal2{
+.horizontal2 {
   position: absolute;
   margin-left: 490px;
   margin-right: 500px;
@@ -182,7 +181,7 @@ i {
   z-index: 1;
 }
 
-.vertical0{
+.vertical0 {
   position: absolute;
   margin-left: 473px;
   margin-right: 607px;
@@ -194,7 +193,7 @@ i {
   transform: rotate(90deg);
 }
 
-.vertical1{
+.vertical1 {
   position: absolute;
   margin-left: 473px;
   margin-right: 607px;
@@ -206,7 +205,7 @@ i {
   transform: rotate(90deg);
 }
 
-.vertical2{
+.vertical2 {
   position: absolute;
   margin-left: 473px;
   margin-right: 607px;
