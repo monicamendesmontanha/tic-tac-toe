@@ -138,6 +138,9 @@ form {
   justify-content: space-around;
   align-items: center;
   letter-spacing: 1.5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 i {
@@ -148,11 +151,15 @@ i {
   color: #ff3;
 }
 
+.game {
+  position: relative;
+}
+
 .horizontal0 {
   position: absolute;
-  margin-left: 490px;
-  margin-right: 500px;
-  top: 235px;
+  margin-left: 53px;
+  margin-right: 63px;
+  top: 47px;
   left: 0;
   right: 0;
   visibility: hidden;
@@ -161,9 +168,9 @@ i {
 
 .horizontal1 {
   position: absolute;
-  margin-left: 490px;
-  margin-right: 500px;
-  top: 365px;
+  margin-left: 53px;
+  margin-right: 63px;
+  top: 182px;
   left: 0;
   right: 0;
   visibility: hidden;
@@ -172,9 +179,9 @@ i {
 
 .horizontal2 {
   position: absolute;
-  margin-left: 490px;
-  margin-right: 500px;
-  top: 504px;
+  margin-left: 53px;
+  margin-right: 63px;
+  top: 316px;
   left: 0;
   right: 0;
   visibility: hidden;
@@ -183,10 +190,10 @@ i {
 
 .vertical0 {
   position: absolute;
-  margin-left: 473px;
-  margin-right: 607px;
-  top: 369px;
-  left: -133px;
+  margin-left: 149px;
+  margin-right: 127px;
+  top: 184px;
+  left: -213px;
   right: 0;
   visibility: hidden;
   z-index: 1;
@@ -195,10 +202,10 @@ i {
 
 .vertical1 {
   position: absolute;
-  margin-left: 473px;
-  margin-right: 607px;
-  top: 369px;
-  left: 61px;
+  margin-left: 149px;
+  margin-right: 127px;
+  top: 184px;
+  left: -19px;
   right: 0;
   visibility: hidden;
   z-index: 1;
@@ -207,10 +214,10 @@ i {
 
 .vertical2 {
   position: absolute;
-  margin-left: 473px;
-  margin-right: 607px;
-  top: 369px;
-  left: 254px;
+  margin-left: 149px;
+  margin-right: 127px;
+  top: 184px;
+  left: 175px;
   right: 0;
   visibility: hidden;
   z-index: 1;
@@ -219,9 +226,9 @@ i {
 
 .diagonalRight {
   position: absolute;
-  margin-left: 490px;
-  margin-right: 455px;
-  top: 353px;
+  margin-left: 45px;
+  margin-right: 45px;
+  top: 183px;
   left: 0;
   right: 0;
   visibility: hidden;
@@ -231,9 +238,9 @@ i {
 
 .diagonalLeft {
   position: absolute;
-  margin-left: 449px;
-  margin-right: 500px;
-  top: 354px;
+  margin-left: 45px;
+  margin-right: 45px;
+  top: 188px;
   left: 0;
   right: 0;
   visibility: hidden;
