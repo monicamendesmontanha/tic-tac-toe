@@ -23,17 +23,3 @@ This is my first project using HTML, CSS, JavaScript, JQuery and NES.css Framewo
 
 ### When both players get a draw.
 <img width="1440" alt="Screen Shot 2019-04-03 at 20 25 40" src="https://user-images.githubusercontent.com/33978352/55468618-81b46880-564f-11e9-8ccc-d78157e3ddca.png">
-
-## Development
-
-### Pre-requisites:
-* nodejs v11.10.x
-
-### Running locally
-
-```
-$ git clone https://github.com/monicamendesmontanha/tic-tac-toe
-$ cd tic-tac-toe
-$ npm install
-$ open index.html
-```
